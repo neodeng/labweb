@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="wdith=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="./favicon.ico">
+
+    <title>{% block title %}Home page{% endblock %}</title>
+
+    <!--Bootstrap core CSS-->
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!--Custom styles for this template-->
+    {% block custom-css %}
+    <link href="../static/cover.css" rel="stylesheet">
+    {% endblock %}
+
+    <!--Custom Javascript for this template-->
+    {% block custom-java %}
+    {% endblock %}
+  </head>
+  <body>
+  {% block body %}
+  {% endblock %}
+  </body>
+</html>

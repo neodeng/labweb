@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+    {% block custom-css %}
+    <link href="../static/home.css" rel="stylesheet">
+    {% endblock %}
+
+    {% block custom-java %}
+    <script src="../static/js/ie-emulation-modes-warning.js"></script>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    {% endblock %}
+
+{% block body %}
+    <!-- NAVBAR
+    ================================================== -->
+  <div class="brand">
+    <div class="brand-logo">
+      <img src="../static/fig/nju_logo.png">
+    </div>
+    <h1 class="brand-h1"> 南京大学 微纳光子学实验室</h1>
+    <h4 class="brand-h4"> 彭茹雯教授课题组 </h4>
+  </div>
+        <nav class="navbar navbar-inverse navbar-static-top">
+          <div class="container">
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li><a href="{% url homepage %}">主页</a></li>
+                <li class="active"><a href="#">课题组成员</a></li>
+                <li><a href="#contact">研究领域</a></li>
+                <li><a href="#">发表论文</a></li>
+                <li><a href="#">仪器设备</a></li>
+                <li><a href="#">联系方式</a></li>
+                <li><a href="{% url homepage_en %}">English</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+{% include "footer.html" %}
+{% endblock %}

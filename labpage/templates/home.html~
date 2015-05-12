@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+    {% block custom-css %}
+    <link href="../static/home.css" rel="stylesheet">
+    {% endblock %}
+
+    {% block custom-java %}
+    <script src="../static/js/ie-emulation-modes-warning.js"></script>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    {% endblock %}
+
+{% block body %}
+    <!-- NAVBAR
+    ================================================== -->
+  <div class="brand">
+    <div class="brand-logo">
+      <img src="../static/fig/nju_logo.png">
+    </div>
+    <h1 class="brand-h1"> 南京大学 微纳光子学实验室</h1>
+    <h4 class="brand-h4"> 彭茹雯教授课题组 </h4>
+  </div>
+        <nav class="navbar navbar-inverse navbar-static-top">
+          <div class="container">
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="#">主页</a></li>
+                <li><a href="{% url members %}">课题组成员</a></li>
+                <li><a href="#contact">研究领域</a></li>
+                <li><a href="#">发表论文</a></li>
+                <li><a href="#">仪器设备</a></li>
+                <li><a href="#">联系方式</a></li>
+                <li><a href="{% url homepage_en %}">English</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+<div class="main">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h4 class="panel-title">课题组介绍</h4>
+    </div>
+    <div class="panel-body">
+    <!-- 滚动幻灯片-->
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="3"></li>
+      <li data-target="#myCarousel" data-slide-to="4"></li>
+      <li data-target="#myCarousel" data-slide-to="5"></li>
+      <li data-target="#myCarousel" data-slide-to="6"></li>
+      </ol>   
+      <div class="carousel-inner" role="listbox">
+      {% for slide in slides %}
+      {% if slide.id == 1 %}
+        <div class="item active">
+      {% else %}
+        <div class="item">
+      {% endif %}
+          <img class="first-slide" src="{{slide.img.url}}" alt="First slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <p>{{slide.id}}</p>
+            </div>
+          </div>
+        </div>
+       {% endfor %}
+      </div>
+      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+    </div>
+  </div>
+
+  <!-- news -->
+  <div class="news">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h4 class="panel-title">课题组新闻</h4>
+    </div>
+    <div class="panel-body">
+      {% for new in news%}
+         <p><b>{{new.time}}</b>:{{new.content}}</p>
+      {% endfor %}
+    </div>
+  </div>
+  </div>
+ 
+  <div class="recent-publication">
+    <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h4 class="panel-title">最新发表的工作</h4>
+    </div>
+    <div class="panel-body">
+    </div>
+  </div>
+  </div>
+</div>
+{% include "footer.html" %}
+{% endblock %}
