@@ -1,0 +1,47 @@
+
+.main{
+  height: 1000px;
+}
+
+.panel{
+  margin-left: 100px;
+  border: 0px;
+  width: 750px;
+  float: left;
+}
+
+.panel .panel-heading{
+  background: #000080;
+  padding: 5px;
+}
+
+.panel .panel-heading .panel-title{
+   font-weight: bold;
+}
+
+.panel .panel-body{
+  padding-left: 0px;
+  padding-bottom: 0px;
+}
+
+.news {
+  float: left;
+}
+
+.news .panel{
+  margin-left: 20px;
+  width:380px;
+} 
+  
+.carousel{
+  width: 750px;
+  padding: 0px;
+  margin: 0px;
+  height: 350px;
+}
+
+.carousel-inner{
+  width: 750px;
+}
+
+

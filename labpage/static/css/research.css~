@@ -1,0 +1,15 @@
+.main {
+  padding-left: 100px;
+  padding-right: 100px;
+  height: auto;
+}
+
+td {
+  vertical-align: bottom;
+  width: 600px;
+  text-align: middle;
+}
+
+td >img{
+  max-width: 450px;
+}

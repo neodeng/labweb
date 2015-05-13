@@ -1,6 +1,7 @@
 {% extends "base.html" %}
     {% block custom-css %}
-    <link href="../static/home.css" rel="stylesheet">
+    <link href="../static/css/base.css" rel="stylesheet">
+    <link href="../static/css/members.css" rel="stylesheet">
     {% endblock %}
 
     {% block custom-java %}
@@ -28,14 +29,86 @@
               <ul class="nav navbar-nav">
                 <li><a href="{% url homepage %}">主页</a></li>
                 <li class="active"><a href="{% url members %}">课题组成员</a></li>
-                <li><a href="#contact">研究领域</a></li>
-                <li><a href="#">发表论文</a></li>
-                <li><a href="#">仪器设备</a></li>
-                <li><a href="#">联系方式</a></li>
+                <li><a href="{% url research %}">研究领域</a></li>
+                <li><a href="{% url publication %}">发表论文</a></li>
+                <li><a href="{% url facility %}">仪器设备</a></li>
+                <li><a href="{% url contact %}">联系方式</a></li>
                 <li><a href="{% url homepage_en %}">English</a></li>
               </ul>
             </div>
           </div>
         </nav>
+<div class="main">
+  <h2>教授</h2>
+  {% for member in members %}
+  {% if member.cls == 'Professor' %}
+  <table>
+    <tr>
+      <td><img src="{{member.photo.url}}" class="img-rounded"></td>
+      <td>{{member.name}}</td>
+      <td>{{member.email}}</td>
+      <td>{{member.address}}</td>
+    </tr>
+  </table>
+  {% endif %}
+  {% endfor %}
+  </br>
+  <h2>博士后</h2>
+  {% for member in members %}
+  {% if member.cls == 'PostDoc' %}
+  <table>
+    <tr>
+      <td><img src="{{member.photo.url}}" class="img-rounded"></td>
+      <td>{{member.name}}</td>
+      <td>{{member.email}}</td>
+      <td>{{member.address}}</td>
+    </tr>
+  </table>
+  {% endif %}
+  {% endfor %}
+  </br>
+  <h2>硕士</h2>
+  {% for member in members %}
+  {% if member.cls == 'Master' %}
+  <table>
+    <tr>
+      <td><img src="{{member.photo.url}}" class="img-rounded"></td>
+      <td>{{member.name}}</td>
+      <td>{{member.email}}</td>
+      <td>{{member.address}}</td>
+    </tr>
+  </table>
+  {% endif %}
+  {% endfor %}
+  </br>
+  <h2>本科生</h2>
+  {% for member in members %}
+  {% if member.cls == 'Bachelor' %}
+  <table>
+    <tr>
+      <td><img src="{{member.photo.url}}" class="img-rounded"></td>
+      <td>{{member.name}}</td>
+      <td>{{member.email}}</td>
+      <td>{{member.address}}</td>
+    </tr>
+  </table>
+  {% endif %}
+  {% endfor %}
+  </br>
+  <h2>已毕业学生</h2>
+  {% for member in members %}
+  {% if member.cls == 'Alumin' %}
+  <table>
+    <tr>
+      <td><img src="{{member.photo.url}}" class="img-rounded"></td>
+      <td>{{member.name}}</td>
+      <td>{{member.email}}</td>
+      <td>{{member.address}}</td>
+    </tr>
+  </table>
+  {% endif %}
+  {% endfor %}
+  </br>
+</div>
 {% include "footer.html" %}
 {% endblock %}

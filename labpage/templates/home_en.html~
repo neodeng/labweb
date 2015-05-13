@@ -1,6 +1,7 @@
 {% extends "base.html" %}
     {% block custom-css %}
-    <link href="../static/carousel.css" rel="stylesheet">
+    <link href="../static/css/base.css" rel="stylesheet">
+    <link href="../static/css/home.css" rel="stylesheet">
     {% endblock %}
 
     {% block custom-java %}
@@ -15,77 +16,60 @@
 {% block body %}
     <!-- NAVBAR
     ================================================== -->
-    <div class="navbar-wrapper">
-      <div class="container">
-
+  <div class="brand">
+    <div class="brand-logo">
+      <img src="../static/fig/nju_logo.png">
+    </div>
+    <h1 class="brand-h1"> Microphotonics Laboratory of NJU</h1>
+    <h4 class="brand-h4"> Group of Professor Ru-Wen Peng</h4>
+  </div>
         <nav class="navbar navbar-inverse navbar-static-top">
           <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <a class="navbar-brand" href="#">Group of Professor Ru-Wen Peng</a>
-            </div>
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#about">Members</a></li>
-                <li><a href="#contact">Research</a></li>
-                <li><a href="#">Publications</a></li>
-                <li><a href="#">Facility</a></li>
-                <li><a href="#">Contact</a></li>
+                <li class="active"><a href="{% url homepage %}">Home</a></li>
+                <li><a href="{% url members %}">Members</a></li>
+                <li><a href="{% url research %}">Researches</a></li>
+                <li><a href="{% url publication %}">Publications</a></li>
+                <li><a href="{% url facility %}">Facilities</a></li>
+                <li><a href="{% url contact %}">Contact</a></li>
+                <li><a href="{% url homepage %}">Chinese</a></li>
               </ul>
             </div>
           </div>
         </nav>
-
-      </div>
+<div class="main">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h4 class="panel-title">课题组介绍</h4>
     </div>
-
-
-    <!-- Carousel Slide
-    ================================================== -->
+    <div class="panel-body">
+    <!-- 滚动幻灯片-->
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
-      <!-- Indicators -->
       <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-      </ol>
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="3"></li>
+      <li data-target="#myCarousel" data-slide-to="4"></li>
+      <li data-target="#myCarousel" data-slide-to="5"></li>
+      <li data-target="#myCarousel" data-slide-to="6"></li>
+      </ol>   
       <div class="carousel-inner" role="listbox">
+      {% for slide in slides %}
+      {% if slide.id == 1 %}
         <div class="item active">
-          <img class="first-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="First slide">
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>Example headline.</h1>
-              <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
-            </div>
-          </div>
-        </div>
+      {% else %}
         <div class="item">
-          <img class="second-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Second slide">
+      {% endif %}
+          <img class="first-slide" src="{{slide.img.url}}" alt="First slide">
           <div class="container">
             <div class="carousel-caption">
-              <h1>Another example headline.</h1>
-              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+              <p>{{slide.id}}</p>
             </div>
           </div>
         </div>
-        <div class="item">
-          <img class="third-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Third slide">
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>One more for good measure.</h1>
-              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
-            </div>
-          </div>
-        </div>
+       {% endfor %}
       </div>
       <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
         <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
@@ -95,35 +79,33 @@
         <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
       </a>
-    </div><!-- /.carousel -->
+    </div>
+    </div>
+  </div>
 
-
-    <!-- Marketing messaging and featurettes
-    ================================================== -->
-    <!-- Wrap the rest of the page in another container to center all the content. -->
-
-    <div class="container marketing">
-
-      <!-- Three columns of text below the carousel -->
-      <div class="row">
-        <div class="col-lg-4">
-          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-          <h2>Heading</h2>
-          <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-      </div><!-- /.row -->
+  <!-- news -->
+  <div class="news">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h4 class="panel-title">课题组新闻</h4>
+    </div>
+    <div class="panel-body">
+      {% for new in news%}
+         <p><b>{{new.time}}</b>:{{new.content}}</p>
+      {% endfor %}
+    </div>
+  </div>
+  </div>
+ 
+  <div class="recent-publication">
+    <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h4 class="panel-title">最新发表的工作</h4>
+    </div>
+    <div class="panel-body">
+    </div>
+  </div>
+  </div>
+</div>
 {% include "footer.html" %}
 {% endblock %}

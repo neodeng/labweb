@@ -13,6 +13,10 @@
     <!--Bootstrap core CSS-->
     <link href="../static/css/bootstrap.min.css" rel="stylesheet">
     
+    <!--Bootstrap core Javascript-->
+    <script src="../static/js/jquery.js"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
+
     <!--Custom styles for this template-->
     {% block custom-css %}
     <link href="../static/cover.css" rel="stylesheet">

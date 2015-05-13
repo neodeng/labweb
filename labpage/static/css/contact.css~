@@ -1,0 +1,13 @@
+.main{
+  padding-left: 200px;
+  padding-right: 200px;
+  height: 1000px;
+}
+
+td{
+  width: 500px;
+}
+
+td >img{
+  max-width: 400px;
+}

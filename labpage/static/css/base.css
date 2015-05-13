@@ -1,0 +1,64 @@
+/* GOBAL STYLES
+-------------------------------------------------- */
+/* Padding below he footer and lighter body text */
+
+body {
+  color: #000000;
+}
+
+.brand{
+  width: auto;
+  height: 150px;
+  background: #000080;
+}
+
+.brand-h1{
+  color: #fff;
+  margin: 0px;
+  padding-left: 100px;
+  padding-top: 50px;
+}
+
+.brand-h4{
+  color: #fff;
+  padding-top: 5px;
+  padding-left: 100px;
+}
+
+.brand .brand-logo{
+  float: right;
+  padding-right: 100px;
+  padding-top: 50px; 
+}
+.navbar .container{
+  padding-left: 200px;
+  min-height: 10px;
+}
+
+.navbar{
+  background: #EDEDED;
+  color: #000;
+  font-size: 15px;
+  min-height: 5px;
+}
+
+.navbar .nav >li >a{
+  color: #000;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.navbar .nav .active>a,.navbar .nav .active>a:hover,.navbar .nav >li >a:hover{
+  background: #000080;
+  font-weight: bold;
+}
+
+.footer{
+  color: #fff;
+  background: #000080;
+  padding-bottom: 40px;
+}
+
+.footer .container{
+  padding-top: 10px;
+}

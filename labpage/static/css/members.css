@@ -1,0 +1,14 @@
+.main {
+  padding-left: 200px;
+  padding-right: 200px;
+  height: auto;
+}
+
+td {
+  width: 300px;
+  text-align: middle;
+}
+
+td >img {
+  max-width: 200px;
+}

@@ -1,6 +1,7 @@
 {% extends "base.html" %}
     {% block custom-css %}
-    <link href="../static/home.css" rel="stylesheet">
+    <link href="../static/css/base.css" rel="stylesheet">
+    <link href="../static/css/home.css" rel="stylesheet">
     {% endblock %}
 
     {% block custom-java %}
@@ -26,9 +27,9 @@
           <div class="container">
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <li class="active"><a href="#">主页</a></li>
+                <li class="active"><a href="{% url homepage %}">主页</a></li>
                 <li><a href="{% url members %}">课题组成员</a></li>
-                <li><a href="#contact">研究领域</a></li>
+                <li><a href="{% url research %}">研究领域</a></li>
                 <li><a href="#">发表论文</a></li>
                 <li><a href="#">仪器设备</a></li>
                 <li><a href="#">联系方式</a></li>
