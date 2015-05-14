@@ -1,5 +1,7 @@
-  <div id="footer" align="center">
-    &copy; 2015 <a href="http://physics.nju.edu.cn/" target='_blank'>Physics School of Nanjing University</a>&nbsp&nbspGroup of Professor Ru-Wen Peng&nbsp&nbsp&nbsp&nbsp&nbspLast Updated By <i>Y.Q. Deng</i> on 3/3/2015</br>
+<div class="footer">
+  <div class="container">
+    &copy; 2015 <a href="http://physics.nju.edu.cn/" target="_blank">Physics School of Nanjing University</a>&nbsp&nbspGroup of Professor Ru-Wen Peng&nbsp&nbsp&nbsp&nbsp&nbspLast Updated By <i>Y.Q. Deng</i> on 3/3/2015</br>
     address： Tang Zhongying Building, No.15, Jinyin Road, Nanjing &nbsp&nbsp&nbsp
     E-mail：<a href="mailto:rwpeng@nju.edu.cn">rwpeng@nju.edu.cn</a>&nbsp&nbspPhone：025-83593882
-  </div>
+ </div>
+</div>

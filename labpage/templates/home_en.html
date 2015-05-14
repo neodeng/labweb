@@ -17,22 +17,24 @@
     <!-- NAVBAR
     ================================================== -->
   <div class="brand">
+    <div class="contain">
     <div class="brand-logo">
       <img src="../static/fig/nju_logo.png">
     </div>
     <h1 class="brand-h1"> Microphotonics Laboratory of NJU</h1>
     <h4 class="brand-h4"> Group of Professor Ru-Wen Peng</h4>
+    </div>
   </div>
         <nav class="navbar navbar-inverse navbar-static-top">
           <div class="container">
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <li class="active"><a href="{% url homepage %}">Home</a></li>
-                <li><a href="{% url members %}">Members</a></li>
-                <li><a href="{% url research %}">Researches</a></li>
-                <li><a href="{% url publication %}">Publications</a></li>
-                <li><a href="{% url facility %}">Facilities</a></li>
-                <li><a href="{% url contact %}">Contact</a></li>
+                <li class="active"><a href="{% url homepage_en %}">Home</a></li>
+                <li><a href="{% url members_en %}">Members</a></li>
+                <li><a href="{% url research_en %}">Researches</a></li>
+                <li><a href="{% url publication_en %}">Publications</a></li>
+                <li><a href="{% url facility_en %}">Facilities</a></li>
+                <li><a href="{% url contact_en %}">Contact</a></li>
                 <li><a href="{% url homepage %}">Chinese</a></li>
               </ul>
             </div>
@@ -91,7 +93,7 @@
     </div>
     <div class="panel-body">
       {% for new in news%}
-         <p><b>{{new.time}}</b>:{{new.content}}</p>
+         <p><b>{{new.time}}</b>:{{new.content_en}}</p>
       {% endfor %}
     </div>
   </div>
@@ -107,5 +109,5 @@
   </div>
   </div>
 </div>
-{% include "footer.html" %}
+{% include "footer_en.html" %}
 {% endblock %}

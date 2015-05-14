@@ -2,27 +2,22 @@
 # Create your views here.
 from django.shortcuts import render_to_response, get_object_or_404
 from django.http import Http404
-from home.models import Slide, News, Member, Researches, Publications, Facility
+from home.models import Slide, New, Memberss, Researchs, Publications, Facilitys
 
 def welcome(request):
     return render_to_response("welcome.html")
 
 def homepage(request):
     slides=Slide.objects.all()
-    news=News.objects.all()
+    news=New.objects.all()
     return render_to_response("home.html",{"slides":slides,"news":news})
 
-def homepage_en(request):
-    slides=Slide.objects.all()
-    news=News.objects.all()
-    return render_to_response("home_en.html",{"slides":slides,"news":news})
-
 def members(request):
-    members=Member.objects.all()
+    members=Memberss.objects.all()
     return render_to_response("members.html",{"members":members})
 
 def research(request):
-    researches=Researches.objects.all()
+    researches=Researchs.objects.all()
     return render_to_response("research.html",{"researches":researches})
 
 def publication(request):
@@ -30,9 +25,33 @@ def publication(request):
     return render_to_response("publication.html",{"publications":publication})
 
 def facility(request):
-    facility=Facility.objects.all()
+    facility=Facilitys.objects.all()
     return render_to_response("facility.html",{"facility":facility})
 
 def contact(request):
     return render_to_response("contact.html")
+
+def homepage_en(request):
+    slides=Slide.objects.all()
+    news=New.objects.all()
+    return render_to_response("home_en.html",{"slides":slides,"news":news})
+
+def members_en(request):
+    members=Memberss.objects.all()
+    return render_to_response("members_en.html",{"members":members})
+
+def research_en(request):
+    researches=Researchs.objects.all()
+    return render_to_response("research_en.html",{"researches":researches})
+
+def publication_en(request):
+    publication=Publications.objects.all()
+    return render_to_response("publication_en.html",{"publications":publication})
+
+def facility_en(request):
+    facility=Facilitys.objects.all()
+    return render_to_response("facility_en.html",{"facility":facility})
+
+def contact_en(request):
+    return render_to_response("contact_en.html")
 

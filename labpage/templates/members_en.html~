@@ -21,97 +21,96 @@
     <div class="brand-logo">
       <img src="../static/fig/nju_logo.png">
     </div>
-    <h1 class="brand-h1"> 南京大学 微纳光子学实验室</h1>
-    <h4 class="brand-h4"> 彭茹雯教授课题组 </h4>
-    </div> 
+    <h1 class="brand-h1"> Microphotonics Laboratory of NJU</h1>
+    <h4 class="brand-h4"> Group of Professor Ru-Wen Peng</h4>
     </div>
   </div>
         <nav class="navbar navbar-inverse navbar-static-top">
           <div class="container">
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <li><a href="{% url homepage %}">主页</a></li>
-                <li class="active"><a href="{% url members %}">课题组成员</a></li>
-                <li><a href="{% url research %}">研究领域</a></li>
-                <li><a href="{% url publication %}">发表论文</a></li>
-                <li><a href="{% url facility %}">仪器设备</a></li>
-                <li><a href="{% url contact %}">联系方式</a></li>
-                <li><a href="{% url homepage_en %}">English</a></li>
+                <li><a href="{% url homepage_en %}">Home</a></li>
+                <li class="active"><a href="{% url members_en %}">Members</a></li>
+                <li><a href="{% url research_en %}">Researches</a></li>
+                <li><a href="{% url publication_en %}">Publications</a></li>
+                <li><a href="{% url facility_en %}">Facilities</a></li>
+                <li><a href="{% url contact_en %}">Contact</a></li>
+                <li><a href="{% url homepage %}">Chinese</a></li>
               </ul>
             </div>
           </div>
         </nav>
 <div class="main">
-  <h2>教授</h2>
+  <h2>Professor</h2>
   {% for member in members %}
   {% if member.cls == 'Professor' %}
   <table>
     <tr>
       <td><img src="{{member.photo.url}}" class="img-rounded"></td>
-      <td>{{member.name}}</td>
+      <td>{{member.name_en}}</td>
       <td>{{member.email}}</td>
-      <td>{{member.address}}</td>
+      <td>{{member.address_en}}</td>
     </tr>
   </table>
   {% endif %}
   {% endfor %}
   </br>
-  <h2>博士后</h2>
+  <h2>Post Doctor</h2>
   {% for member in members %}
   {% if member.cls == 'PostDoc' %}
   <table>
     <tr>
       <td><img src="{{member.photo.url}}" class="img-rounded"></td>
-      <td>{{member.name}}</td>
+      <td>{{member.name_en}}</td>
       <td>{{member.email}}</td>
-      <td>{{member.address}}</td>
+      <td>{{member.address_en}}</td>
     </tr>
   </table>
   {% endif %}
   {% endfor %}
   </br>
-  <h2>硕士</h2>
+  <h2>Graduate</h2>
   {% for member in members %}
   {% if member.cls == 'Master' %}
   <table>
     <tr>
       <td><img src="{{member.photo.url}}" class="img-rounded"></td>
-      <td>{{member.name}}</td>
+      <td>{{member.name_en}}</td>
       <td>{{member.email}}</td>
-      <td>{{member.address}}</td>
+      <td>{{member.address_en}}</td>
     </tr>
   </table>
   {% endif %}
   {% endfor %}
   </br>
-  <h2>本科生</h2>
+  <h2>Undergraduate</h2>
   {% for member in members %}
   {% if member.cls == 'Bachelor' %}
   <table>
     <tr>
       <td><img src="{{member.photo.url}}" class="img-rounded"></td>
-      <td>{{member.name}}</td>
+      <td>{{member.name_en}}</td>
       <td>{{member.email}}</td>
-      <td>{{member.address}}</td>
+      <td>{{member.address_en}}</td>
     </tr>
   </table>
   {% endif %}
   {% endfor %}
   </br>
-  <h2>已毕业学生</h2>
+  <h2>Alumni</h2>
   {% for member in members %}
   {% if member.cls == 'Alumin' %}
   <table>
     <tr>
       <td><img src="{{member.photo.url}}" class="img-rounded"></td>
-      <td>{{member.name}}</td>
+      <td>{{member.name_en}}</td>
       <td>{{member.email}}</td>
-      <td>{{member.address}}</td>
+      <td>{{member.address_en}}</td>
     </tr>
   </table>
   {% endif %}
   {% endfor %}
   </br>
 </div>
-{% include "footer.html" %}
+{% include "footer_en.html" %}
 {% endblock %}

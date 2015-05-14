@@ -1,7 +1,7 @@
 #coding=utf-8
 
 from django.contrib import admin
-from models import Slide, Publications, News, Member, Researches, Facility
+from models import Slide, Publications, New, Memberss, Researchs, Facilitys
 
 class SlideAdmin(admin.ModelAdmin):
     list_display=['img','caption']
@@ -23,7 +23,7 @@ class FacilityAdmin(admin.ModelAdmin):
 
 admin.site.register(Slide,SlideAdmin)
 admin.site.register(Publications, PublicationAdmin)
-admin.site.register(News, NewsAdmin)
-admin.site.register(Member, MemberAdmin)
-admin.site.register(Researches, ResearchAdmin)
-admin.site.register(Facility, FacilityAdmin)
+admin.site.register(New, NewsAdmin)
+admin.site.register(Memberss, MemberAdmin)
+admin.site.register(Researchs, ResearchAdmin)
+admin.site.register(Facilitys, FacilityAdmin)

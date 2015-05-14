@@ -21,36 +21,36 @@
     <div class="brand-logo">
       <img src="../static/fig/nju_logo.png">
     </div>
-    <h1 class="brand-h1"> 南京大学 微纳光子学实验室</h1>
-    <h4 class="brand-h4"> 彭茹雯教授课题组 </h4>
-    </div> 
- 
+    <h1 class="brand-h1"> Microphotonics Laboratory of NJU</h1>
+    <h4 class="brand-h4"> Group of Professor Ru-Wen Peng</h4>
+    </div>
   </div>
         <nav class="navbar navbar-inverse navbar-static-top">
           <div class="container">
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <li><a href="{% url homepage %}">主页</a></li>
-                <li><a href="{% url members %}">课题组成员</a></li>
-                <li><a href="{% url research %}">研究领域</a></li>
-                <li><a href="{% url publication %}">发表论文</a></li>
-                <li><a href="{% url facility %}">仪器设备</a></li>
-                <li class="active"><a href="{% url contact %}">联系方式</a></li>
-                <li><a href="{% url homepage_en %}">English</a></li>
+                <li><a href="{% url homepage_en %}">Home</a></li>
+                <li><a href="{% url members_en %}">Members</a></li>
+                <li><a href="{% url research_en %}">Researches</a></li>
+                <li><a href="{% url publication_en %}">Publications</a></li>
+                <li><a href="{% url facility_en %}">Facilities</a></li>
+                <li class="active"><a href="{% url contact_en %}">Contact</a></li>
+                <li><a href="{% url homepage %}">Chinese</a></li>
               </ul>
             </div>
           </div>
         </nav>
 <div class="main">
-  <h2>办公室地址</h2>
+  <h2>Office Address</h2>
   <table class="table">
     <tr>
       <td>
-        <p>南京大学物理学院 </p>
-        <p>南京大学固体微结构国家实验室</p>
-        <p>南京市鼓楼区金银街15号唐仲英楼 A306 </p>
-        <p>邮编：210093</p>
-        <p>电话：025-83593882</p>
+        <p>National Laboratory of Solid State Microstructures </p>
+        <p>Department of Physics</p>
+        <p>Nanjing University </p>
+        <p>Room A306 of Tang Zhongying Building, No.15, Jinyin Road</p>
+        <p>Nanjing 210093, China</p>
+        <p>Phone: 025-83593882</p>
         <p>Email: rwpeng@nju.edu.cn</p>
       </td>
       <td><img src="../static/fig/address.png" class="img-rounded"></td>
@@ -58,5 +58,5 @@
   </table>
   </br>
 </div>
-{% include "footer.html" %}
+{% include "footer_en.html" %}
 {% endblock %}

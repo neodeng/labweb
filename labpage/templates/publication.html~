@@ -17,11 +17,14 @@
     <!-- NAVBAR
     ================================================== -->
   <div class="brand">
+    <div class="contain">
     <div class="brand-logo">
       <img src="../static/fig/nju_logo.png">
     </div>
     <h1 class="brand-h1"> 南京大学 微纳光子学实验室</h1>
     <h4 class="brand-h4"> 彭茹雯教授课题组 </h4>
+    </div> 
+    </div>
   </div>
         <nav class="navbar navbar-inverse navbar-static-top">
           <div class="container">
@@ -31,8 +34,8 @@
                 <li><a href="{% url members %}">课题组成员</a></li>
                 <li><a href="{% url research %}">研究领域</a></li>
                 <li class="active"><a href="{% url publication %}">发表论文</a></li>
-                <li><a href="#">仪器设备</a></li>
-                <li><a href="#">联系方式</a></li>
+                <li><a href="{% url facility %}">仪器设备</a></li>
+                <li><a href="{% url contact %}">联系方式</a></li>
                 <li><a href="{% url homepage_en %}">English</a></li>
               </ul>
             </div>

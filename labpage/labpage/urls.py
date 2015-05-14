@@ -18,6 +18,11 @@ urlpatterns = patterns('',
     # url(r'^labpage/', include('labpage.foo.urls')),
     
     url(r'^home_en/','home.views.homepage_en',name='homepage_en'),
+    url(r'^members_en/','home.views.members_en',name='members_en'),
+    url(r'^research_en/','home.views.research_en',name='research_en'),
+    url(r'^publication_en/','home.views.publication_en',name='publication_en'),
+    url(r'^facility_en/','home.views.facility_en',name='facility_en'),
+    url(r'^contact_en/','home.views.contact_en',name='contact_en'),
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
